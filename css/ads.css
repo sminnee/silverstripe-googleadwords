@@ -1,0 +1,52 @@
+form, .formaction_withoutlabel, .currency, input  {display:inline;}
+.summary fieldset, .useropts fieldset {display:inline;}
+.summary {display:inline; line-height:20px;}
+
+
+fieldset > div.clear, .currency > label {display:none;}
+
+
+.ad {float:left; padding:15px; display:block; clear:none;}
+
+
+a {text-decoration:underline;}
+.keywords a {text-decoration:none;}
+caption {font-weight:bold; text-align:left; padding-bottom:15px;}
+caption a {font-weight:normal;}
+/*.keywords .heading td {border-bottom: 1px solid black; padding-bottom:0px;} .keywords td {padding:3px; text-align:center;}*/
+
+table.report {
+  border: 1px solid #3f7c5f;
+}
+table.report td, table.report th {
+  empty-cells: show;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #d0d0d0;
+}
+table.report tfoot td, table.report tfoot th,
+table.report thead td, table.report thead th {
+  border-bottom: 0px;
+}
+table.report td.rightcolumn, table.report th.rightcolumn {
+  border-right: 0px;
+}
+table.report td.boxcolumn {
+  border-left: 1px solid #3f7c5f;
+  border-right: 0px;
+}
+table.report th.boxcolumn {
+  border-left: 1px solid #3f7c5f;
+  border-right: 0px;
+}
+
+table.report td.r {
+  text-align: right;
+}
+
+table.report td.l {
+  text-align: left;
+}
+
+.heading td {background: #dae6dd;}
