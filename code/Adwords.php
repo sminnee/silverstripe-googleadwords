@@ -340,7 +340,7 @@ class Adwords_Controller extends controller {
 	 */
 	function Campaign() {
 		$allads = DataObject::get("AdwordsAds");
-		foreach($allads as $anAd) {
+		if ($allads) foreach($allads as $anAd) {
 			if(strstr($anAd->URL, Director::absoluteURL("/")) != false) {
 				return $anAd->GoogleCampaign;
 			}
