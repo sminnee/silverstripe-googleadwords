@@ -14,12 +14,9 @@
  *  If google releases its api for adwords in a more useful form, a driver can be 
  *  written using the api without affecting the interface, and plugged in here.
  */
-GoogleAdwords::setDriver("Scraping");
+GoogleAdwords::set_driver("Scraping");
 
-/**
- * Register A callback function for all descendents of Page.
- */
-Page::ExtendCMS(array("GoogleAdwords","getCMSFields"));
+DataObject::add_extension('SiteTree', 'GoogleAdwords');
 
 /**
  * Register the Adwords URL space.
