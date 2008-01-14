@@ -378,7 +378,7 @@ class Adwords_Controller extends controller {
 			DB::query("DELETE FROM AdwordsAds");
 			DB::query("DELETE FROM AdwordsWords");
 			
-			foreach($data as $ad) {
+			if($data) foreach($data as $ad) {
 				//Deal with parentage
 				$ad->ParentID = $account->ID;				
 				$ad->write();
