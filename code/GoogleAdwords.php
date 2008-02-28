@@ -10,7 +10,7 @@ class GoogleAdwords extends DataObjectDecorator {
 	private static $driver = "";
 
 	static function get_adwords_iframe() {
-		$controller = Controller::currentController();
+		$controller = Controller::curr();
 		if(method_exists($controller,"currentPage") && method_exists($controller->currentPage(),"ElementName"))
 			$page = $controller->currentPage()->ElementName();
 		else
