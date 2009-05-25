@@ -26,7 +26,7 @@ fieldset {
 		$LoginForm
 	<% end_if %>
 <% else %>
-	You don't have permission to access this resource.
+	<% _t('NOPERMISSION','You don\'t have permission to access this resource.') %>
 <% end_if %>
 </body>
 </html>

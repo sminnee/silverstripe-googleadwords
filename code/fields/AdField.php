@@ -56,7 +56,7 @@ class AdField extends FormField {
 					$this->state,
 					new HiddenField("CampaignID","",$this->ad->GoogleCampaign),
 					new HiddenField("AdID","",$this->ad->GoogleID),
-					new FormAction_WithoutLabel("PauseUnpause",(stristr($this->Status(),"Active")?"Pause":"Unpause"))
+					new FormAction_WithoutLabel("PauseUnpause",(stristr($this->Status(),"Active")?_t('AdField.PAUSE','Pause'):_t('AdField.UNPAUSE','Unpause')))
 				),
 			new FieldSet()
 			);
@@ -73,7 +73,7 @@ class AdField extends FormField {
 					new HiddenField("CampaignID","",$this->ad->GoogleCampaign),
 					new HiddenField("AdID","",$this->ad->GoogleID),
 					new CurrencyField("BidText",null,$this->ad->Bid),
-					new FormAction_WithoutLabel("SaveChange","Save")
+					new FormAction_WithoutLabel("SaveChange",_t('AdField.SAVECHANGE','Save'))
 				),
 			new FieldSet()
 			);

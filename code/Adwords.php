@@ -4,7 +4,7 @@
  * This code controls communication between actions & the back end
  * And provides the main forms.
  */
-class Adwords_Controller extends controller {
+class Adwords_Controller extends Controller {
 	/**
 	 * Provide URL Links, Required internally as a viewable item
 	 */
@@ -164,8 +164,8 @@ class Adwords_Controller extends controller {
 	 * mode to be changed.
 	 */
 	public function ModeForm() {
-		$viewing = (isset($_REQUEST['all']))?"Viewing All Ads":"Viewing Ads For This Page";
-		$button =  (isset($_REQUEST['all']))?"View Ads for this page":"View all ads";
+		$viewing = (isset($_REQUEST['all']))?_t('Adwords.ALLADS','Viewing All Ads'):_t('Adwords.ADSFORTHISPAGE','Viewing Ads For This Page');
+		$button =  (isset($_REQUEST['all']))?_t('Adwords.VIEWADSFORTHISPAGE','View Ads for this page'):_t('Adwords.VIEWALLADS','View all ads');
 		$state = (!isset($_REQUEST['all']))?"all":"";
 		return new Form($this,"ModeForm",
 			new FieldSet(
@@ -184,7 +184,7 @@ class Adwords_Controller extends controller {
 		
 		$ads = $this->Ads();
 		if(!count($ads)) {
-			return new Form($this,"NavigationForm",new FieldSet(new LiteralField("NoAds","There are no ads in this view.")),new FieldSet());
+			return new Form($this,"NavigationForm",new FieldSet(new LiteralField("NoAds",_t('Adwords.NOADSINVIEW','There are no ads in this view.'))),new FieldSet());
 		}
 		
 		foreach($ads as $ad) {
@@ -402,7 +402,7 @@ class Adwords_Controller extends controller {
 	}
 	
 	function LogoutForm() {
-		return new Form($this,"LogoutForm",new FieldSet(new FormAction_withoutLabel("logout","Sign out")),new FieldSet());
+		return new Form($this,"LogoutForm",new FieldSet(new FormAction_withoutLabel("logout",_t('Adwords.LOGOUT','Sign out'))),new FieldSet());
 	}
 	function logout() {
 		//Remove entries from the accounts table, then re-direct back to index().

@@ -7,12 +7,14 @@
  */
 class CreationInterface {
 	public static function Process($data,$caller) {
+		$t1 = _t('CreationInterface.LOADING','Loading...');
 		$topstuff = <<<EOF
 </head>
 <div style='z-index:500; position:fixed; top:0; bottom:0; left:0; right:0; background:white; padding-top:50%; padding-right:50%;' id='loading'>
-Loading...
+{$t1}
 </div>
 EOF;
+		$t2 = _t('CreationInterface.RETURNTOMAIN','Return To Main View');
 		$extrastuff = <<<EOF
 <script type='text/javascript'>
 	document.getElementById("navigation").style.display="none";
@@ -25,7 +27,7 @@ EOF;
 	document.getElementById("loading").style.display="none";
 	// Provide a Consistant interface throughout
 	var snippit = '<div style="float:right;" class="useropts"><strong>{$caller->Account()->Email}</strong> | {$caller->LogoutForm()->forTemplate()}</div>';
-	var snippit2 = '<a style="color:black; padding:2px;" href="{$caller->Link()}">Return To Main View</a>';
+	var snippit2 = '<a style="color:black; padding:2px;" href="{$caller->Link()}">{$t2}</a>';
 	document.body.innerHTML = snippit + document.body.innerHTML + snippit2;
 </script>
 </body>
