@@ -1,0 +1,16 @@
+{
+	"name": "silverstripe-labs/googleadwords",
+	"description": "SilverStripe Google Adwords Module.",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe-labs", "googleadwords", "third-party"],
+	"authors": [
+	{
+		"name": "Sam Minnée",
+		"email": "sam@silverstripe.com"
+	}
+	],
+	"require":
+	{
+		"silverstripe/framework": "2.4.*"
+	}
+}
